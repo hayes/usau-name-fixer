@@ -1,0 +1,13 @@
+node_modules
+dist
+src
+screenshots
+.vercel
+*.sh
+*.md
+.gitignore
+tsconfig.json
+vite.config.ts
+package.json
+pnpm-lock.yaml
+index.html

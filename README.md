@@ -4,9 +4,10 @@ A Chrome extension that:
 1. Reverts "Rhino" back to "Rhino Slam!" throughout the USA Ultimate website
 2. Adds hover cards showing Urban Dictionary definitions for all team names
 
-## 🌐 Website
+## 🌐 Links
 
-Visit [usau-urban-dictionary-fix.vercel.app](https://usau-urban-dictionary-fix.vercel.app) for more info and installation instructions.
+- **Website**: [usau-urban-dictionary-fix.vercel.app](https://usau-urban-dictionary-fix.vercel.app)
+- **GitHub**: [github.com/hayes/usau-name-fixer](https://github.com/hayes/usau-name-fixer)
 
 ## Why?
 
