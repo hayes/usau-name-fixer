@@ -45,6 +45,35 @@
             background: #0052a3;
         }
 
+        .download-btn-secondary {
+            display: inline-block;
+            background: #f4f4f4;
+            color: #666;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .download-btn-secondary:hover {
+            background: #e8e8e8;
+        }
+
+        .store-btn-disabled {
+            display: inline-block;
+            background: #f4f4f4;
+            color: #999;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 500;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
         .screenshot {
             margin: 40px 0 20px 0;
         }
@@ -69,7 +98,8 @@
     <p>USA Ultimate changed "Portland Rhino Slam!" to "Portland Rhino" because someone complained about the Urban Dictionary definition. This Chrome extension fixes that and adds hover cards showing Urban Dictionary definitions for all team names.</p>
 
     <div class="download">
-        <a href="/extension.zip" class="download-btn" download>Download Extension</a>
+        <span class="store-btn-disabled">Chrome Web Store (Coming Soon)</span>
+        <a href="/extension.zip" class="download-btn-secondary" download>Download ZIP</a>
     </div>
 
     <p><strong>To install:</strong></p>
