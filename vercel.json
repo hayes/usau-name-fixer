@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "buildCommand": "pnpm build",
+  "outputDirectory": "public",
+  "headers": [
+    {
+      "source": "/extension.zip",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/zip"
+        }
+      ]
+    }
+  ]
+}

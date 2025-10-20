@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USAU Team Name Fixer</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="/extension/src/icons/icon16.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/extension/src/icons/icon48.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="/extension/src/icons/icon128.png">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .download {
+            margin: 30px 0;
+        }
+
+        a {
+            color: #0066cc;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: #0066cc;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            margin-right: 10px;
+        }
+
+        .download-btn:hover {
+            background: #0052a3;
+        }
+
+        .screenshot {
+            margin: 40px 0 20px 0;
+        }
+
+        .screenshot img {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>USAU Team Name Fixer</h1>
+
+    <p>USA Ultimate changed "Portland Rhino Slam!" to "Portland Rhino" because someone complained about the Urban Dictionary definition. This Chrome extension fixes that and adds hover cards showing Urban Dictionary definitions for all team names.</p>
+
+    <div class="download">
+        <a href="/extension.zip" class="download-btn" download>Download Extension</a>
+    </div>
+
+    <p><strong>To install:</strong></p>
+    <ol>
+        <li>Download and extract the ZIP file</li>
+        <li>Open Chrome and go to <code>chrome://extensions/</code></li>
+        <li>Enable "Developer mode" (toggle in top right)</li>
+        <li>Click "Load unpacked"</li>
+        <li>Select the extracted extension folder</li>
+    </ol>
+
+    <div class="screenshot">
+        <img src="/screenshots/rhino-slam-team-page.png" alt="Team page showing Rhino Slam!">
+    </div>
+
+    <div class="screenshot">
+        <img src="/screenshots/hover-card-example.png" alt="Hover card with Urban Dictionary definition">
+    </div>
+
+    <div class="screenshot">
+        <img src="/screenshots/rhino-slam-schedule.png" alt="Schedule showing Rhino Slam!">
+    </div>
+</body>
+</html>
