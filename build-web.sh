@@ -5,13 +5,30 @@ set -e
 rm -rf public
 mkdir -p public
 
-# Create extension ZIP from dist (only the extension files)
+# Create Chrome extension ZIP from dist
 cd dist
-zip -r ../extension.zip manifest.json src/ -x '*.DS_Store'
+zip -r ../extension-chrome.zip manifest.json src/ -x '*.DS_Store'
 cd ..
 
-# Move ZIP to public
-mv extension.zip public/
+# Create Firefox extension ZIP with Firefox manifest
+mkdir -p dist-firefox
+cp -r dist/* dist-firefox/
+cp src/manifest-firefox.json dist-firefox/manifest.json
+cp src/CHANGELOG.md dist-firefox/
+cd dist-firefox
+zip -r ../extension-firefox.zip manifest.json src/ CHANGELOG.md -x '*.DS_Store'
+cd ..
+
+# Also add CHANGELOG to Chrome version
+cd dist
+cp ../src/CHANGELOG.md .
+zip -r ../extension-chrome.zip CHANGELOG.md
+cd ..
+rm -rf dist-firefox
+
+# Move ZIPs to public
+mv extension-chrome.zip public/
+mv extension-firefox.zip public/
 
 # Copy website files to public
 cp index.html public/

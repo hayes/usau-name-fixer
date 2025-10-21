@@ -99,16 +99,29 @@
 
     <div class="download">
         <span class="store-btn-disabled">Chrome Web Store (Coming Soon)</span>
-        <a href="/extension.zip" class="download-btn-secondary" download>Download ZIP</a>
+        <span class="store-btn-disabled">Firefox Add-ons (Coming Soon)</span>
     </div>
 
-    <p><strong>To install:</strong></p>
+    <div class="download" style="margin-top: 15px;">
+        <a href="/extension-chrome.zip" class="download-btn-secondary" download>Download for Chrome</a>
+        <a href="/extension-firefox.zip" class="download-btn-secondary" download>Download for Firefox</a>
+    </div>
+
+    <p><strong>To install on Chrome:</strong></p>
     <ol>
-        <li>Download and extract the ZIP file</li>
+        <li>Download and extract the Chrome ZIP file</li>
         <li>Open Chrome and go to <code>chrome://extensions/</code></li>
         <li>Enable "Developer mode" (toggle in top right)</li>
         <li>Click "Load unpacked"</li>
         <li>Select the extracted extension folder</li>
+    </ol>
+
+    <p><strong>To install on Firefox:</strong></p>
+    <ol>
+        <li>Download the Firefox ZIP file</li>
+        <li>Open Firefox and go to <code>about:debugging#/runtime/this-firefox</code></li>
+        <li>Click "Load Temporary Add-on"</li>
+        <li>Select the manifest.json file from the extracted folder</li>
     </ol>
 
     <div class="screenshot">

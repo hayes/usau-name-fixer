@@ -83,29 +83,83 @@ function createHoverCard(data: UrbanDictionaryResult): HTMLDivElement {
     const definitionContainer = card.querySelector('.ud-definition-container');
     if (!definitionContainer) return;
 
-    definitionContainer.innerHTML = `
-      <div class="ud-definition">${cleanText(def.definition || '')}</div>
-      ${def.example ? `<div class="ud-example"><em>Example:</em> ${cleanText(def.example)}</div>` : ''}
-      <div class="ud-author">by ${def.author || 'Unknown'}</div>
-    `;
+    // Clear existing content
+    while (definitionContainer.firstChild) {
+      definitionContainer.removeChild(definitionContainer.firstChild);
+    }
+
+    // Create definition element
+    const definitionDiv = document.createElement('div');
+    definitionDiv.className = 'ud-definition';
+    definitionDiv.textContent = cleanText(def.definition || '');
+    definitionContainer.appendChild(definitionDiv);
+
+    // Add example if exists
+    if (def.example) {
+      const exampleDiv = document.createElement('div');
+      exampleDiv.className = 'ud-example';
+      const em = document.createElement('em');
+      em.textContent = 'Example: ';
+      exampleDiv.appendChild(em);
+      exampleDiv.appendChild(document.createTextNode(cleanText(def.example)));
+      definitionContainer.appendChild(exampleDiv);
+    }
+
+    // Add author
+    const authorDiv = document.createElement('div');
+    authorDiv.className = 'ud-author';
+    authorDiv.textContent = `by ${def.author || 'Unknown'}`;
+    definitionContainer.appendChild(authorDiv);
   };
 
-  card.innerHTML = `
-    <div class="ud-header">
-      <div class="ud-header-left">
-        <strong>Urban Dictionary</strong>
-        <span class="ud-term">${data.term}</span>
-      </div>
-      ${data.definitions.length > 1 ? `
-        <div class="ud-pagination">
-          <button class="ud-prev" disabled>←</button>
-          <span class="ud-page-info">1 / ${data.definitions.length}</span>
-          <button class="ud-next">→</button>
-        </div>
-      ` : ''}
-    </div>
-    <div class="ud-definition-container"></div>
-  `;
+  // Create header
+  const header = document.createElement('div');
+  header.className = 'ud-header';
+
+  const headerLeft = document.createElement('div');
+  headerLeft.className = 'ud-header-left';
+
+  const strong = document.createElement('strong');
+  strong.textContent = 'Urban Dictionary';
+  headerLeft.appendChild(strong);
+
+  const termSpan = document.createElement('span');
+  termSpan.className = 'ud-term';
+  termSpan.textContent = data.term;
+  headerLeft.appendChild(termSpan);
+
+  header.appendChild(headerLeft);
+
+  // Add pagination if multiple definitions
+  if (data.definitions.length > 1) {
+    const pagination = document.createElement('div');
+    pagination.className = 'ud-pagination';
+
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'ud-prev';
+    prevBtn.textContent = '←';
+    prevBtn.disabled = true;
+    pagination.appendChild(prevBtn);
+
+    const pageInfo = document.createElement('span');
+    pageInfo.className = 'ud-page-info';
+    pageInfo.textContent = `1 / ${data.definitions.length}`;
+    pagination.appendChild(pageInfo);
+
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'ud-next';
+    nextBtn.textContent = '→';
+    pagination.appendChild(nextBtn);
+
+    header.appendChild(pagination);
+  }
+
+  card.appendChild(header);
+
+  // Create definition container
+  const definitionContainer = document.createElement('div');
+  definitionContainer.className = 'ud-definition-container';
+  card.appendChild(definitionContainer);
 
   renderDefinition();
 
